@@ -12,6 +12,12 @@ public class CommonItem extends Item {
         setQuality(getQuality() - 1);       
         if (getSellIn() <= 0)
             setQuality(getQuality() - 1);
+        qualityNeverLessZero();
+    }
+
+    protected void qualityNeverLessZero() {
+        if (getQuality() < 0)
+            setQuality(0);
     }
 
 }

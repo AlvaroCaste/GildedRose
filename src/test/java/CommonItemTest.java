@@ -24,4 +24,13 @@ public class CommonItemTest {
         itemTest.updateQuality();
         assertTrue(itemTest.getQuality() == 6);
     }
+    
+    @Test
+    public void qualityNeverNegativeTest(){
+        itemTest = new CommonItem("commonItem",5,0);
+        itemTest.updateQuality();
+        assertTrue(itemTest.getQuality() == 0);
+        itemTest.updateQuality();
+        assertTrue(itemTest.getQuality() == 0);
+    }
 }
