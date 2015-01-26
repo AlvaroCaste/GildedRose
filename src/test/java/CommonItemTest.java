@@ -15,4 +15,13 @@ public class CommonItemTest {
         itemTest.updateQuality();
         assertTrue(itemTest.getQuality() == 7);
     }
+    
+    @Test
+    public void qualityDegradeX2SellInZeroTest(){
+        itemTest = new CommonItem("commonItem", 0, 10);
+        itemTest.updateQuality();
+        assertTrue(itemTest.getQuality() == 8);
+        itemTest.updateQuality();
+        assertTrue(itemTest.getQuality() == 6);
+    }
 }

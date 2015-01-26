@@ -9,7 +9,9 @@ public class CommonItem extends Item {
     }
 
     protected void degradeQuality() {
-        setQuality(getQuality() - 1);        
+        setQuality(getQuality() - 1);       
+        if (getSellIn() <= 0)
+            setQuality(getQuality() - 1);
     }
 
 }
