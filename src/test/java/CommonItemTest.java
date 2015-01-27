@@ -33,4 +33,10 @@ public class CommonItemTest {
         itemTest.updateQuality();
         assertTrue(itemTest.getQuality() == 0);
     }
+    
+    @Test
+    public void qualityNeverMore50Test(){
+        itemTest = new CommonItem("commonItem", 10, 55);
+        assertTrue(itemTest.getQuality() == 50);
+    }
 }
