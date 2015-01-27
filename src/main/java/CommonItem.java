@@ -10,11 +10,11 @@ public class CommonItem extends Item {
     }
 
     public void updateQuality() {
-        degradeQuality();
+        refreshQuality();
         decreaseSellIn();
     }
 
-    protected void degradeQuality() {     
+    protected void refreshQuality() {     
         if (getSellIn() <= 0)
             setQuality(getQuality() - 
                     QUALITY_DEGRADES * QUALITY_DEGRADES_SELLIN_ZERO);
