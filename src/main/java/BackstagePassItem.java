@@ -11,6 +11,9 @@ public class BackstagePassItem extends CommonItem {
             setQuality(getQuality() + 2);
         else
             setQuality(getQuality() + 3);
+        
+        if (getSellIn() <= 0)
+            setQuality(0);
     }
     
     
