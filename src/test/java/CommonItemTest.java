@@ -36,8 +36,9 @@ public class CommonItemTest {
     
     @Test
     public void qualityNeverMore50Test(){
-        itemTest = new CommonItem("commonItem", 10, 55);
-        assertTrue(itemTest.getQuality() == 50);
+        int quality = CommonItem.MAX_QUALITY + 5;
+        itemTest = new CommonItem("commonItem", 10, quality);
+        assertTrue(itemTest.getQuality() == CommonItem.MAX_QUALITY);
     }
     
     @Test
