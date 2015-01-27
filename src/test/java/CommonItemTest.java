@@ -39,4 +39,11 @@ public class CommonItemTest {
         itemTest = new CommonItem("commonItem", 10, 55);
         assertTrue(itemTest.getQuality() == 50);
     }
+    
+    @Test
+    public void sellInDegradesWhenUpdadeQualityTest(){
+        itemTest = new CommonItem("commonItem", 5, 5);
+        itemTest.updateQuality();
+        assertTrue(itemTest.getSellIn() == 4);
+    }
 }

@@ -11,6 +11,7 @@ public class CommonItem extends Item {
 
     public void updateQuality() {
         degradeQuality();
+        decreaseSellIn();
     }
 
     protected void degradeQuality() {     
@@ -32,4 +33,7 @@ public class CommonItem extends Item {
             setQuality(MAX_QUALITY);
     }
 
+    protected void decreaseSellIn(){
+        setSellIn(getSellIn() - 1);
+    }
 }
