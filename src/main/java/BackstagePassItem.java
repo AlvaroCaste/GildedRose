@@ -7,9 +7,10 @@ public class BackstagePassItem extends CommonItem {
 
     @Override
     protected void refreshQuality() {
-        if (getSellIn() <= 10)
+        if (getSellIn() > 5)
             setQuality(getQuality() + 2);
-            
+        else
+            setQuality(getQuality() + 3);
     }
     
     
