@@ -1,4 +1,7 @@
 public class CommonItem extends Item {
+    
+    protected final static int QUALITY_DEGRADES = 1;
+    protected final static int QUALITY_DEGRADES_SELLIN_ZERO = 2;
 
     public CommonItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -8,10 +11,12 @@ public class CommonItem extends Item {
         degradeQuality();
     }
 
-    protected void degradeQuality() {
-        setQuality(getQuality() - 1);       
+    protected void degradeQuality() {     
         if (getSellIn() <= 0)
-            setQuality(getQuality() - 1);
+            setQuality(getQuality() - 
+                    QUALITY_DEGRADES * QUALITY_DEGRADES_SELLIN_ZERO);
+        else
+            setQuality(getQuality() - QUALITY_DEGRADES);
         qualityNeverLessZero();
     }
 
