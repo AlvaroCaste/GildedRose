@@ -8,6 +8,15 @@ public class BackstagePassItemTest {
     CommonItem backstagePassesItem;
     
     @Test
+    public void qualityIncreasesTest(){
+        backstagePassesItem = new BackstagePassItem("BackstagePassItem", 15, 2);
+        backstagePassesItem.updateQuality();
+        assertTrue(backstagePassesItem.getQuality() == 3);
+        backstagePassesItem.updateQuality();
+        assertTrue(backstagePassesItem.getQuality() == 4);
+    }
+    
+    @Test
     public void qualityIncreases2WhenSellInTenOrLessTest(){
         backstagePassesItem = new BackstagePassItem("BackstagePassItem",10, 2);
         backstagePassesItem.updateQuality();
