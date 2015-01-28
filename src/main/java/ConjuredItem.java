@@ -7,13 +7,7 @@ public class ConjuredItem extends CommonItem {
         super(name, sellIn, quality);
     }
 
-    protected void refreshQuality() {     
-        if (getSellIn() <= 0)
-            setQuality(getQuality() - 
-                    QUALITY_DEGRADES * QUALITY_DEGRADES_SELLIN_ZERO * 
-                    CONJURED_QUALITY_DEGRADES);
-        else
-            setQuality(getQuality() - QUALITY_DEGRADES * CONJURED_QUALITY_DEGRADES);
-        qualityNeverLessZero();
+    protected int currentQuality() {     
+        return super.currentQuality() * CONJURED_QUALITY_DEGRADES;
     }
 }
