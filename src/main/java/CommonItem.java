@@ -12,6 +12,7 @@ public class CommonItem extends Item {
     public void updateQuality() {
         refreshQuality();
         qualityNeverLessZero();
+        checkMaxQuality();
         decreaseSellIn();
     }
 

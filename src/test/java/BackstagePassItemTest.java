@@ -42,4 +42,12 @@ public class BackstagePassItemTest {
         backstagePassesItem.updateQuality();
         assertTrue(backstagePassesItem.getQuality() == 0);
     }
+    
+    @Test
+    public void qualityCantBeMoreMaxQuality(){
+        int quality = CommonItem.MAX_QUALITY + 5;
+        backstagePassesItem = new BackstagePassItem("BackstagePassItem", 5, quality);
+        backstagePassesItem.updateQuality();
+        assertTrue(backstagePassesItem.getQuality() == CommonItem.MAX_QUALITY);
+    }
 }

@@ -24,4 +24,12 @@ public class AgedBrieItemTest {
         agedBrieItem.updateQuality();
         assertTrue(agedBrieItem.getQuality() == 14);
     }
+    
+    @Test
+    public void qualityCantBeMoreMaxQuality(){
+        int quality = CommonItem.MAX_QUALITY + 5;
+        agedBrieItem = new AgedBrieItem("AgedBrieItem", 5, quality);
+        agedBrieItem.updateQuality();
+        assertTrue(agedBrieItem.getQuality() == CommonItem.MAX_QUALITY);
+    }
 }
